@@ -16,11 +16,11 @@ if (process.env.NODE_ENV === undefined) {
 }
 
 
-const mongoUrl = `mongodb+srv://${mongoUser}:${mongoPassword}@cluster0-wvxxp.mongodb.net/cms?retryWrites=true&w=majority`; 
+const mongoUrl = `mongodb://${mongoUser}:${mongoPassword}@hyderion.com:27017/?authMechanism=DEFAULT`;
 
 const client = new MongoClient(mongoUrl, { useUnifiedTopology: true });
 
-let db = null;
+let db = 'booking';
 
 function connectToMongo(appStart) {
     client.connect( (error, result) => {
